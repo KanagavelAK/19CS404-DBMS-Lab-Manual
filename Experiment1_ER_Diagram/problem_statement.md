@@ -53,21 +53,43 @@ University / Hospital (choose one)
 ## ER Diagram:
 ![DBMS workshop](https://github.com/user-attachments/assets/149897cd-fd2e-4d85-a1cc-f805bf8ffaa8)
 
-## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+## Entities & Attributes:
+Department: DepartmentID (PK), DepartmentName, DepartmentHead
 
-## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
-...
+Doctor: DoctorID (PK), FullName, PhoneNumber, Email, Specialization, WorkSchedule
 
-## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+Patient: PatientID (PK), FullName, DOB, Gender, Address, PhoneNumber, Email, InsuranceDetails
 
-## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+Appointment: AppointmentID (PK), AppointmentDate, Time, ReasonForVisit
+
+MedicalRecord: MedicalRecordID (PK), Diagnosis, Treatments, Medications, TestResults, OtherInfo
+
+Billing: BillID (PK), TotalAmount, PaymentStatus, BillingDate
+
+Payment: PaymentID (PK), PaymentDate, AmountPaid, PaymentMethod
+
+## Relationships:
+Employs (1:N): Department → Doctor
+
+Schedules (1:N): Patient → Appointment
+
+Assigned To (1:N): Doctor → Appointment
+
+Generates (1:1): Appointment → MedicalRecord
+
+Results In (1:1): Appointment → Billing
+
+Settles (1:1): Billing → Payment
+
+## Billing Extension:
+Each appointment leads to a billing, which is settled by a payment. Billing and Payment are connected 1:1 for clear transaction tracking.
+
+## Design Notes:
+Core entities reflect hospital roles.
+
+Relationships and cardinality match real-world hospital workflows.
+
+Billing handled via Appointment → Billing → Payment chain.
 
 ## RESULT:
 Thus, the Entity-Relationship (ER) Diagram have been created successfully.
