@@ -51,7 +51,7 @@ Design a database for patient management, appointments, medical records, and bil
 University / Hospital (choose one)
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![DBMS workshop](https://github.com/user-attachments/assets/149897cd-fd2e-4d85-a1cc-f805bf8ffaa8)
 
 ## Entities and Attributes:
 - Entity1: Attributes
@@ -69,4 +69,5 @@ University / Hospital (choose one)
 ## Design Choices:
 Brief explanation of why you chose certain entities, relationships, and assumptions
 
-## RESULT
+## RESULT:
+Thus, the Entity-Relationship (ER) Diagram have been created successfully.
